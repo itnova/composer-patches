@@ -225,7 +225,12 @@ class Patches implements PluginInterface, EventSubscriberInterface {
     foreach ($packages as $package) {
         $extra = $package->getExtra();
         $package_patches = isset($extra['patches']) ? $extra['patches'] : array();
-        $patches = array_merge_recursive($patches, $package_patches);
+        foreach ($package_patches as $package => $patchList) {
+            if (!isset($patches[$package])) {
+                $patches[$package] = [];
+            }
+            $patches[$package] += $patchList;
+        }
     }
     
     return $patches;
