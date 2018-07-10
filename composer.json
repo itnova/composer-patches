@@ -13,7 +13,7 @@
       "email": "me@cweagans.net"
     }
   ],
-  "abandoned": "cweagans/composer-patches"
+  "abandoned": "cweagans/composer-patches",
   "require": {
     "php": ">=5.3.0",
     "composer-plugin-api": "^1.0"
